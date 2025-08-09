@@ -61,10 +61,41 @@ body {
     }
 }
 
-
 .founder-bg {
-    background-image: url('../images/ourfounder-background.jpg');
+    position: relative;
+    overflow: hidden; /* prevent blur overflow */
 }
+
+/* Blurred background image layer */
+.founder-bg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../images/gradient-indigo-background-illustration-free-photo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px); /* blur amount */
+    z-index: 0;
+}
+
+/* Optional: semi-transparent overlay to reduce color intensity */
+.founder-bg::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Content inside .founder-bg */
+.founder-bg > * {
+    position: relative;
+    z-index: 2; /* above blur and overlay */
+}
+
+
 
 .relative:hover>.dropdown-menu {
     display: block;
@@ -169,6 +200,7 @@ body {
     max-width: 95rem;
 }
 
+/* Service Card Styling */
 .service-card {
     background-color: white;
     border: 1px solid #E5E7EB;
@@ -176,25 +208,66 @@ body {
     padding: 2.5rem;
     text-align: left;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -1px rgba(0, 0, 0, 0.04);
+                0 2px 4px -1px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .service-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
     background-color: #E0E7FF;
     border-radius: 50%;
     border: 6px solid #F0F2FF;
+    width: 50px;
+    height: 50px;
+}
+
+@media (min-width: 640px) { /* sm */
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 768px) { /* md */
+    .service-icon {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media (max-width: 639px) {
+    .service-card {
+        padding: 0.9rem;
+        text-align: center;
+    }
+
+    /* Center icon */
+    .service-card .service-icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Smaller heading on mobile */
+    .service-card h3 {
+        font-size: 0.875rem; /* text-sm */
+        text-align: center !important;
+        text-wrap: nowrap;
+        
+    }
+
+    /* Extra small paragraph on mobile */
+    .service-card p {
+        font-size: 0.75rem; /* text-xs */
+        text-align: center !important;
+    }
 }
 
 .feature-icon {
