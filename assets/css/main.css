@@ -46,20 +46,21 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.hero-section {
+.hero-section { 
     background-image: url('../images/hero-background.webp');
-    height: 97vh;
-    height: 97dvh;
+    height: 85vh;    /* default smaller screens */
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 
 @media (min-width: 768px) {
     .hero-section {
+        height: 97vh;    /* desktop and above */
         border-bottom-left-radius: 3rem;
         border-bottom-right-radius: 3rem;
     }
 }
+
 
 .founder-bg {
     background-image: url('../images/ourfounder-background.jpg');

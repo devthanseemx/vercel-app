@@ -114,12 +114,23 @@ function setupDropdownHover(wrapperId, menuId) {
 
 function setHeroHeight() {
     const hero = document.getElementById('hero');
-    const vh = window.innerHeight * 0.97;
+    const width = window.innerWidth;
+    let vh;
+
+    if (width >= 768) {
+        // Desktop and up
+        vh = window.innerHeight * 0.97;
+    } else {
+        // Smaller screens
+        vh = window.innerHeight * 0.85;
+    }
+
     hero.style.height = `${vh}px`;
 }
 
 window.addEventListener('load', setHeroHeight);
 window.addEventListener('resize', setHeroHeight);
+
 
 // Initialize dropdown on page load
 document.addEventListener("DOMContentLoaded", function () { setupDropdownHover("more-dropdown", "dropdown-menu"); });
