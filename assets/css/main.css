@@ -49,8 +49,8 @@ body {
 .hero-section { 
     background-image: url('../images/hero-background.webp');
     height: 85vh;    /* default smaller screens */
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
 }
 
 @media (min-width: 768px) {
