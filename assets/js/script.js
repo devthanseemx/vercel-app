@@ -122,7 +122,7 @@ function setHeroHeight() {
         vh = window.innerHeight * 0.97;
     } else {
         // Smaller screens
-        vh = window.innerHeight * 0.85;
+        vh = window.innerHeight * 0.90;
     }
 
     hero.style.height = `${vh}px`;
