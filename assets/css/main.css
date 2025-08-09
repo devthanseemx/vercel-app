@@ -48,10 +48,17 @@ body {
 
 .hero-section {
     background-image: url('../images/hero-background.webp');
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
     height: 97vh;
     height: 97dvh;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+    }
 }
 
 .founder-bg {
@@ -127,6 +134,7 @@ body {
     animation-delay: 400ms;
 }
 
+/* Base styles, no underline animation on small screens */
 .nav-link {
     position: relative;
     font-weight: 500;
@@ -148,9 +156,13 @@ body {
     transition: transform 0.3s ease-out;
 }
 
-.nav-link:hover::after {
-    transform: scaleX(1);
+/* Only on desktop: enable hover underline */
+@media (min-width: 1024px) {
+    .nav-link:hover::after {
+        transform: scaleX(1);
+    }
 }
+
 
 .service-container {
     max-width: 95rem;
