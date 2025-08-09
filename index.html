@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickHire LK - Find Work, Hire Talent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+
+<body class="bg-white font-inter scroll-hidden">
+
+    <!-- Hero Section -->
+    <header id="hero"
+        class="hero-section bg-cover bg-center bg-no-repeat relative text-white flex flex-col overflow-hidden mx-0 sm:mx-10">
+        <!-- Navigation Bar -->
+        <nav class="w-full max-w-7xl mx-auto mt-5 px-6 py-5 flex justify-between items-center text-black">
+            <div class="text-xl sm:text-2xl font-display animate-on-scroll fade-in-up">QUICKHIRE LK</div>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex items-center space-x-12 animate-fade-in-right" style="animation-delay: 200ms;">
+                <a href="#hero" class="nav-link hover:text-gray-700 transition-colors">Home</a>
+                <a href="#services" class="nav-link hover:text-gray-700 transition-colors">Services</a>
+                <a href="#how-it-works" class="nav-link hover:text-gray-700 transition-colors">How It Works</a>
+                <a href="#about" class="nav-link hover:text-gray-700 transition-colors">About</a>
+
+                <!-- Dropdown Menu for More -->
+                <div class="relative group" id="more-dropdown">
+                    <!-- Main "Contact" link with dropdown arrow -->
+                    <a href="#" class="nav-link hover:text-gray-700 transition-colors flex items-center">
+                        <span>More</span>
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+
+                    <!-- Dropdown Panel -->
+                    <div id="dropdown-menu"
+                        class="absolute -left-8 mt-2 w-48 bg-white rounded-lg shadow-xl hidden group-hover:block transition-all duration-300 z-10">
+                        <div class="py-2">
+                            <a href="#footer"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">Contact
+                                Us</a>
+                            <a href="authentication/verify-id.php"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">For
+                                Office Use</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="pages/coming-soon.html"
+                    class="bg-[#4F51D8] hover:bg-blue-700 text-white font-bold py-2 px-11 rounded-lg transition duration-300">Sign
+                    in</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden relative z-50">
+                <button id="menu-button" class="text-black focus:outline-none">
+                    <!-- Changed to text-black to be visible -->
+                    <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden sm:hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 z-40">
+            <div class="flex flex-col items-center justify-center h-full space-y-5 text-lg text-white">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+
+                <!-- Collapsible Contact Section for Mobile -->
+                <div class="w-full text-center">
+                    <!-- Trigger Button -->
+                    <button id="mobile-contact-trigger" class="nav-link w-full flex items-center justify-center">
+                        <span>More</span>
+                        <svg id="mobile-arrow" class="w-5 h-5 ml-2 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- Sub-menu (hidden by default) -->
+                    <div id="mobile-contact-submenu" class="hidden mt-3 space-y-4 text-base">
+                        <a href="#footer" class="block nav-link text-gray-400 hover:text-white">Contact Us</a>
+                    </div>
+                </div>
+
+                <a href="pages/coming-soon.html"
+                    class="mt-4 bg-[#4F51D8] hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Sign
+                    in</a>
+            </div>
+        </div>
+
+
+        <!-- Hero Content -->
+        <div class="flex-grow flex flex-col justify-center items-start w-full max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl text-left">
+                <div class="animate-on-scroll fade-in-up animation-delay-100">
+                    <span class="bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-full text-nowrap">The #1
+                        Job Platform in Sri Lanka</span>
+                </div>
+                <h1 class="mt-20 font-display text-4xl text-wrap md:text-7xl lg:text-8xl animate-on-scroll fade-in-up sm:whitespace-nowrap"
+                    style="animation-delay: 200ms;">Find Work. Hire Talent.
+                </h1>
+                <h1 class="mt-8 font-display text-4xl text-wrap md:text-7xl lg:text-8xl animate-on-scroll fade-in-up sm:whitespace-nowrap"
+                    style="animation-delay: 300ms;">
+                    Grow Your Business.
+                </h1>
+                <hr class="mt-10 mb-8 border-gray-300 w-min-full animate-on-scroll fade-in-up"
+                    style="animation-delay: 350ms;">
+                <p class="font-Libre text-sm sm:text-xl max-w-2xl animate-on-scroll fade-in-up"
+                    style="animation-delay: 400ms;">
+                    Connect with the best professionals or find your dream job. QuickHire LK brings together top talent
+                    and
+                    exciting opportunities in one platform.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-white py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 lg:mb-16 animate-on-scroll fade-in-up">
+                <span class="mb-8 inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-5 py-2 rounded-full">
+                    OUR SERVICES
+                </span>
+                <h2 class="text-gray-900 text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
+                    Everything you Need to Find Your Dream Job
+                </h2>
+                <p class="text-gray-600 md:text-lg max-w-2xl mx-auto mt-4">
+                    QuickHire LK provides a comprehensive suite of tools and features designed to make your job search
+                    efficient and successful.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1: Smart Job Matching -->
+                <div class="service-card animate-on-scroll fade-in-up" style="animation-delay: 100ms;">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Smart Job Matching</h3>
+                    <p class="text-gray-600 mt-2">Advanced algorithms that connect the perfect candidate with the right
+                        opportunity instantly.</p>
+                </div>
+
+                <!-- Card 2: Quick Applications -->
+                <div class="service-card animate-on-scroll fade-in-up" style="animation-delay: 200ms;">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Quick Applications</h3>
+                    <p class="text-gray-600 mt-2">Apply to multiple jobs with one click and get responses within 24
+                        hours.</p>
+                </div>
+
+                <!-- Card 3: Local Focus -->
+                <div class="service-card animate-on-scroll fade-in-up" style="animation-delay: 300ms;">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Local Focus</h3>
+                    <p class="text-gray-600 mt-2">Dedicated to Sri Lankan job market with localized solutions and
+                        support.</p>
+                </div>
+
+                <!-- Card 4: Community Network -->
+                <div class="service-card animate-on-scroll fade-in-up" style="animation-delay: 100ms;">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Community Network</h3>
+                    <p class="text-gray-600 mt-2">Join Sri Lanka's largest professional network with mentorship
+                        programs.</p>
+                </div>
+
+                <!-- Card 5: Real-time Alerts -->
+                <div class="service-card animate-on-scroll fade-in-up" style="animation-delay: 200ms;">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Real-time Alerts</h3>
+                    <p class="text-gray-600 mt-2">Get instant notifications for new job postings that match your
+                        preferred criteria and skills.</p>
+                </div>
+
+                <!-- Card 6: Company Insights -->
+                <div class="service-card animate-on-scroll fade-in-up" style="animation-delay: 300ms;">
+                    <div class="service-icon">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5h1v5h-1z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mt-4">Company Insights</h3>
+                    <p class="text-gray-600 mt-2">Access detailed information about employers, company culture, and
+                        growth opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Our Founder Section -->
+    <section id="about" class=" py-10 sm:py-16">
+        <div class="max-w-7xl mx-auto px-6 ">
+            <div
+                class="p-6 sm:p-8 founder-bg bg-cover bg-center backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 text-justify">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div class="animate-on-scroll fade-in-up">
+                        <span class="inline-block bg-white text-black text-sm font-semibold px-8 py-2 rounded-full">
+                            ABOUT OUR FOUNDER
+                        </span>
+                        <h2 class="mt-8 text-4xl font-bold text-gray-900 text-left">
+                            Meet the Visionary Behind <br>
+                            <span class="text-[#4F51D8]">QuickHire LK</span>
+                        </h2>
+                        <p class="mt-5 text-black md:text-base">
+                            Founded by Thanseem, a passionate technologist and entrepreneur with over 2 years of
+                            experience in the Sri Lankan tech industry. His vision was simple: create a platform that
+                            truly serves both job seekers and employers in Sri Lanka.
+                        </p>
+
+                        <!-- Mission, Values, Commitment -->
+                        <div class="mt-8 space-y-6">
+                            <!-- Our Mission -->
+                            <div class="flex items-center gap-4">
+                                <div class="feature-icon bg-blue-200">
+                                    <svg class="w-6 h-6 text-blue-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Our Mission</h3>
+                                    <p class="text-sm">To bridge the gap between talented Sri Lankan professionals and
+                                        meaningful career opportunities through technology and innovation.</p>
+                                </div>
+                            </div>
+                            <!-- Our Values -->
+                            <div class="flex items-center gap-4">
+                                <div class="feature-icon bg-purple-200">
+                                    <svg class="w-6 h-6 text-purple-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Our Values</h3>
+                                    <p class="text-sm">We believe in transparency, accessibility, and empowering every
+                                        individual to reach their full potential in their career journey.</p>
+                                </div>
+                            </div>
+                            <!-- Our Commitment -->
+                            <div class="flex items-center gap-4">
+                                <div class="feature-icon bg-green-200">
+                                    <svg class="w-6 h-6 text-green-800" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg">Our Commitment</h3>
+                                    <p class="text-sm">100% free platform for all users. We're committed to keeping
+                                        QuickHire LK accessible to everyone, forever.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-on-scroll fade-in-left">
+                        <div class="bg-white text-center rounded-3xl shadow-lg p-10">
+                            <img src="assets/images/founder-image.jpeg" class="w-48 h-48 founder-image object-cover object-[center_10%] rounded-full mx-auto shadow-lg">
+                            <h3 class="font-signature text-4xl text-gray-800 mt-4">Mohamed Thanseem</h3>
+                            <p class="font-semibold text-[#4F51D8] mt-1">Founder & Chief Executive Officer</p>
+                            <p class="text-gray-500 text-sm mt-4">
+                                "Every great career starts with the right opportunity. My goal is to ensure that no
+                                talented individual in Sri Lanka misses out on their perfect job match."
+                            </p>
+                            <hr class="my-6 border-gray-200">
+                            <div class="flex justify-around text-center">
+                                <div>
+                                    <span class="block text-2xl text-[#4F51D8]">2+</span>
+                                    <span class="text-xs text-gray-500 uppercase tracking-wider text-wrap">Years Experience</span>
+                                </div>
+                                <div>
+                                    <span class="block text-2xl text-[#4F51D8]">10K+</span>
+                                    <span class="text-xs text-gray-500 uppercase tracking-wider text-wrap">Lives Impacted</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works & Escrow Section -->
+    <section id="how-it-works" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center animate-on-scroll fade-in-up">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                    How <span class="text-[#4F51D8]">QuickHire LK</span> Works
+                </h2>
+                <p class="mt-4 md:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our streamlined process makes it easy to find work or hire talent.
+                </p>
+                <hr class="w-10/12 border-t-2 border-gray-200 mx-auto mt-14 mb-20">
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+                <!-- Step 1 -->
+                <div class="text-center animate-on-scroll fade-in-left" style="animation-delay: 100ms;">
+                    <div class="step-number-circle">01</div>
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Create Your Profile</h3>
+                    <p class="mt-2 text-gray-600">Sign up and create a profile, highlighting your skills, experience,
+                        and goals.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center animate-on-scroll fade-in-left" style="animation-delay: 200ms;">
+                    <div class="step-number-circle">02</div>
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Browse Opportunities</h3>
+                    <p class="mt-2 text-gray-600">Explore thousands of verified job listings from top companies across
+                        Sri Lanka.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center animate-on-scroll fade-in-left" style="animation-delay: 300ms;">
+                    <div class="step-number-circle">03</div>
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Apply with Ease</h3>
+                    <p class="mt-2 text-gray-600">Submit applications with a single click and track your application
+                        status in real-time.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center animate-on-scroll fade-in-left" style="animation-delay: 400ms;">
+                    <div class="step-number-circle">04</div>
+                    <h3 class="mt-6 text-xl font-bold text-gray-900">Get Hired</h3>
+                    <p class="mt-2 text-gray-600">Connect with employers, ace your interviews, and land your dream job.
+                    </p>
+                </div>
+            </div>
+
+
+            <!--  Secure Escrow Payment System -->
+            <div
+                class="mt-20 lg:mt-28 p-8 md:p-12 rounded-2xl bg-gradient-to-br from-blue-50 via-cyan-50 to-green-50 animate-on-scroll fade-in-up">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Secure Escrow Payment System</h2>
+                    <p class="mt-3 md:text-lg text-gray-600">Your money is protected until work is complete to your
+                        satisfaction</p>
+                </div>
+
+                <!-- Escrow Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <!-- Card 1: Funds Secured -->
+                    <div class="escrow-card animate-on-scroll fade-in-up" style="animation-delay: 100ms;">
+                        <div class="escrow-icon-wrapper bg-blue-100">
+                            <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg mt-4">Funds Secured</h3>
+                        <p class="text-gray-500 text-sm mt-1">Client deposits payment into secure escrow account.</p>
+                    </div>
+
+                    <!-- Card 2: Work Progresses -->
+                    <div class="escrow-card animate-on-scroll fade-in-up" style="animation-delay: 200ms;">
+                        <div class="escrow-icon-wrapper bg-orange-100">
+                            <svg class="w-8 h-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg mt-4">Work Progresses</h3>
+                        <p class="text-gray-500 text-sm mt-1">Professional completes milestones as agreed.</p>
+                    </div>
+
+                    <!-- Card 3: Safe Release -->
+                    <div class="escrow-card animate-on-scroll fade-in-up" style="animation-delay: 300ms;">
+                        <div class="escrow-icon-wrapper bg-green-100">
+                            <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg mt-4">Safe Release</h3>
+                        <p class="text-gray-500 text-sm mt-1">Funds released upon client approval of work.</p>
+                    </div>
+                </div>
+
+                <!-- Guarantee -->
+                <div class="mt-8 text-center animate-on-scroll fade-in-up" style="animation-delay: 400ms;">
+                    <div class="inline-flex items-center gap-2 bg-white py-2 px-4 rounded-full text-sm">
+                        <svg class="w-5 h-5 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700 font-medium">100% Payment Protection Guarantee</span>
+                    </div>
+                </div>
+            </div></div>
+    </section>
+
+    <!-- Popular Job Categories Section -->
+    <section id="categories" class="py-18 pb-6 mb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center animate-on-scroll fade-in-up">
+                <span
+                    class="inline-block bg-blue-100 text-blue-800 text-sm font-bold px-6 py-2 rounded-full uppercase tracking-wider">
+                    Explore
+                </span>
+                <h2 class="mt-10 text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+                    Popular Job Categories
+                </h2>
+                <p class="mt-4 md:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Browse through the most in-demand categories or explore all job types to find your perfect match.
+                </p>
+            </div>
+            <!-- Categories Grid -->
+            <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
+
+                <!-- Card 1: Designing -->
+                <div class="category-card animate-on-scroll fade-in-up" style="animation-delay: 100ms;">
+                    <div class="category-icon-wrapper">
+                        <svg class="w-8 h-8 text-cyan-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg text-gray-900">Designing</h3>
+                    <p class="mt-1 text-sm text-gray-500">1000+ Jobs</p>
+                </div>
+
+                <!-- Card 2: Programming -->
+                <div class="category-card animate-on-scroll fade-in-up" style="animation-delay: 200ms;">
+                    <div class="category-icon-wrapper">
+                        <svg class="w-8 h-8 text-cyan-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg text-gray-900">Programming</h3>
+                    <p class="mt-1 text-sm text-gray-500">800+ Jobs</p>
+                </div>
+
+                <!-- Card 3: Construction -->
+                <div class="category-card animate-on-scroll fade-in-up" style="animation-delay: 300ms;">
+                    <div class="category-icon-wrapper">
+                        <svg class="w-8 h-8 text-cyan-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6h1.5m-1.5 3h1.5m-1.5 3h1.5M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg text-gray-900">Construction</h3>
+                    <p class="mt-1 text-sm text-gray-500">1200+ Jobs</p>
+                </div>
+
+                <!-- Card 4: Writing -->
+                <div class="category-card animate-on-scroll fade-in-up" style="animation-delay: 400ms;">
+                    <div class="category-icon-wrapper">
+                        <svg class="w-8 h-8 text-cyan-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg text-gray-900">Writing</h3>
+                    <p class="mt-1 text-sm text-gray-500">200+ Jobs</p>
+                </div>
+
+                <!-- Card 5: Marketing -->
+                <div class="category-card animate-on-scroll fade-in-up" style="animation-delay: 500ms;">
+                    <div class="category-icon-wrapper">
+                        <svg class="w-8 h-8 text-cyan-700" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1.125-1.5M12 16.5v2.25m0 0l1.125 1.5m-1.125-1.5l-1.125 1.5m3.375-7.5l1.125-1.5m-1.125 1.5L12 9.75M12 12m-2.25 0a2.25 2.25 0 104.5 0 2.25 2.25 0 00-4.5 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-4 font-bold text-lg text-gray-900">Marketing</h3>
+                    <p class="mt-1 text-sm text-gray-500">250+ Jobs</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="call-to-action" class="bg-white pb-15 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- CTA Card -->
+            <div class="bg-black text-center rounded-2xl p-12 md:p-16 animate-on-scroll fade-in-up">
+                <h2 class="font-Roboto font-semibold text-3xl md:text-4xl lg:text-5xl text-white">
+                    Freelance services at your <span class="text-[#1B93CE] font-display">fingertips</span>
+                </h2>
+                <div class="mt-8">
+                    <a href="#"
+                        class="inline-block bg-white text-black font-semibold py-3 px-16 rounded-lg shadow-lg hover:bg-gray-200 transition-colors duration-300">
+                        Join
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="animate-on-scroll fade-in-up">
+        <div class="px-4 py-10 md:p-6 lg:p-8 bg-white">
+            <div class=" max-w-7xl mx-auto px-6">
+                <!-- Footer -->
+                <footer id="footer" class="bg-black rounded-2xl">
+                    <div class="max-w-6xl mx-auto py-16 px-6 lg:px-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+                            <!-- Column 1: Brand and Socials -->
+                            <div class="md:col-span-2 lg:col-span-2 max-w-sm">
+                                <h2 class="text-2xl font-bold text-white font-Roboto">
+                                    QUICKHIRE <span class="text-blue-500">LK</span>
+                                </h2>
+                                <p class="mt-4 text-gray-400 text-sm leading-relaxed text-left">
+                                    Sri Lanka's Premier Platform Connecting Talented Professionals With Exciting
+                                    Opportunities. Find Work, Hire Talent, And Grow Your Business With QuickHire LK.
+                                </p>
+                                <div class="mt-6 flex space-x-4">
+                                    <a href="#" class="footer-social-link text-white" aria-label="Facebook">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="footer-social-link text-white" aria-label="Instagram">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="footer-social-link text-white" aria-label="Twitter">
+                                        <i class="fa-brands fa-x-twitter"></i>
+                                    </a>
+                                    <a href="#" class="footer-social-link text-white" aria-label="LinkedIn">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Column 2: Quick Links -->
+                            <div>
+                                <h3 class="font-Roboto font-semibold text-white tracking-wider">Quick Links</h3>
+                                <div class="mt-4 space-y-3  text-sm">
+                                    <a href="#home"
+                                        class="block text-gray-400 hover:text-white transition-colors">Home</a>
+                                    <a href="#call-to-action"
+                                        class="block text-gray-400 hover:text-white transition-colors">Find
+                                        Jobs</a>
+                                    <a href="#call-to-action"
+                                        class="block text-gray-400 hover:text-white transition-colors">Hire
+                                        Talent</a>
+                                    <a href="#how-it-works"
+                                        class="block text-gray-400 hover:text-white transition-colors">How It Works</a>
+                                    <a href="#about-us"
+                                        class="block text-gray-400 hover:text-white transition-colors">About
+                                        Us</a>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Resources -->
+                            <div>
+                                <h3 class="font-semibold text-white tracking-wider">Resources</h3>
+                                <div class="mt-4 space-y-3 text-sm">
+                                    <a href="pages/coming-soon.html"
+                                        class="block text-gray-400 hover:text-white transition-colors">Blog</a>
+                                    <a href="pages/coming-soon.html"
+                                        class="block text-gray-400 hover:text-white transition-colors">Help
+                                        Center</a>
+                                    <a href="pages/coming-soon.html"
+                                        class="block text-gray-400 hover:text-white transition-colors">Success
+                                        Stories</a>
+                                    <a href="pages/terms-of-service.html"
+                                        class="block text-gray-400 hover:text-white transition-colors">Terms of
+                                        Service</a>
+                                    <a href="pages/privacy-policy.html"
+                                        class="block text-gray-400 hover:text-white transition-colors">Privacy
+                                        Policy</a>
+                                </div>
+                            </div>
+
+                            <!-- Column 4: Contact -->
+                            <div>
+                                <h3 class="font-semibold text-white tracking-wider">Contact</h3>
+                                <div class="mt-4 space-y-3 text-gray-400 text-sm">
+                                    <p>123 Innovation Drive, Colombo 04, Sri Lanka</p>
+                                    <p>+94 76 000 1510</p>
+                                    <p>info@quickhirelk.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Bar -->
+                        <div
+                            class="mt-12 pt-8 border-t border-gray-800 flex flex-col-reverse md:flex-row md:justify-between items-center text-sm text-gray-500 space-y-4 md:space-y-0">
+                            <p>© 2025 QuickHire LK. All Rights Reserved.</p>
+                            <div class="flex space-x-6">
+                                <a href="pages/terms-of-service.html"
+                                    class="hover:text-white transition-colors">Terms</a>
+                                <a href="pages/privacy-policy.html"
+                                    class="hover:text-white transition-colors">Privacy</a>
+                                <a href="pages/cookies-policy.html"
+                                    class="hover:text-white transition-colors">Cookies</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets\js\script.js"></script>
+</body>
+
+</html>
