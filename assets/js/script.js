@@ -1,137 +1,87 @@
-// Functionality for the mobile menu and scroll animations
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Mobile Menu Logic ---
-    const menuButton = document.getElementById('menu-button');
+    // --- MOBILE MENU ---
+    const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const menuOpenIcon = document.getElementById('menu-open-icon');
-    const menuCloseIcon = document.getElementById('menu-close-icon');
-    const body = document.body;
+    const menuPanel = document.getElementById('mobile-menu-panel');
+    const navLinks = document.querySelectorAll('#mobile-menu .nav-link');
 
-    // --- NEW: Elements for mobile dropdown ---
-    const mobileContactTrigger = document.getElementById('mobile-contact-trigger');
-    const mobileContactSubmenu = document.getElementById('mobile-contact-submenu');
-    const mobileArrow = document.getElementById('mobile-arrow');
+    if (mobileMenu) {
+        const openMenu = () => {
+            mobileMenu.classList.remove('invisible', 'opacity-0');
+            menuPanel.classList.remove('-translate-x-full');
+        };
 
-    // Function to close the menu
-    const closeMenu = () => {
-        mobileMenu.classList.add('hidden');
-        menuOpenIcon.classList.remove('hidden');
-        menuCloseIcon.classList.add('hidden');
-        body.classList.remove('overflow-hidden');
-    };
+        const closeMenu = () => {
+            mobileMenu.classList.add('opacity-0');
+            menuPanel.classList.add('-translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('invisible');
+            }, 300);
+        };
+        menuBtn.addEventListener('click', openMenu);
+        mobileMenu.addEventListener('click', closeMenu);
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+        menuPanel.addEventListener('click', (e) => e.stopPropagation());
+    }
 
-    // Function to open the menu
-    const openMenu = () => {
-        mobileMenu.classList.remove('hidden');
-        menuOpenIcon.classList.add('hidden');
-        menuCloseIcon.classList.remove('hidden');
-        body.classList.add('overflow-hidden');
-    };
+    // --- DESKTOP DROPDOWN ---
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const moreDropdownContainer = document.getElementById('more-dropdown-container');
 
-    // Toggle menu when the hamburger button is clicked
-    menuButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (mobileMenu.classList.contains('hidden')) {
-            openMenu();
-        } else {
-            closeMenu();
-        }
-    });
-
-    // --- NEW: Toggle the mobile contact submenu ---
-    mobileContactTrigger.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent the main menu from closing
-        mobileContactSubmenu.classList.toggle('hidden');
-        mobileArrow.classList.toggle('rotate-180');
-    });
-
-    // Close menu when clicking on the overlay background
-    mobileMenu.addEventListener('click', (event) => {
-        if (event.target === mobileMenu) {
-            closeMenu();
-        }
-    });
-
-    // --- MODIFIED: Close menu when a link inside it is clicked ---
-    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a, #mobile-menu button');
-    mobileMenuLinks.forEach(link => {
-        // Only add the close listener to elements that are NOT the dropdown trigger
-        if (link.id !== 'mobile-contact-trigger') {
-            link.addEventListener('click', () => {
-                closeMenu();
-            });
-        }
-    });
-
-
-    // --- Scroll Animation Logic (Remains the same) ---
-    const animationOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const animateOnScroll = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            } else {
-                entry.target.classList.remove('is-visible');
-            }
+    if (dropdownMenu && moreDropdownContainer) {
+        moreDropdownContainer.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('hidden');
         });
-    };
 
-    const observer = new IntersectionObserver(animateOnScroll, animationOptions);
-    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+        dropdownMenu.addEventListener('click', (e) => e.stopPropagation());
 
-    elementsToAnimate.forEach(element => {
-        observer.observe(element);
-    });
+        window.addEventListener('click', () => {
+            dropdownMenu.classList.add('hidden');
+        });
+    }
+
+    // --- SCROLL ANIMATION ---
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            $(entry.target).toggleClass('is-visible', entry.isIntersecting);
+        });
+    }, { threshold: 0.1 });
+
+    $('.animate-on-scroll').each((i, el) => observer.observe(el));
+
+    // --- CLONING SCROLLING GALLERY ---
+    const $imageSet = $('#scrolling-gallery .gallery-image-set');
+    if ($imageSet.length) {
+        const $clone = $imageSet.clone();
+        $('#scrolling-gallery').append($clone);
+    }
 
 });
 
-// Functionality for the Dropdown
-function setupDropdownHover(wrapperId, menuId) {
-    const wrapper = document.getElementById(wrapperId);
-    const menu = document.getElementById(menuId);
-
-    if (!wrapper || !menu) return;
-
-    let timeoutId;
-
-    wrapper.addEventListener("mouseenter", () => {
-        clearTimeout(timeoutId);
-        menu.classList.remove("hidden");
-    });
-
-    wrapper.addEventListener("mouseleave", () => {
-        timeoutId = setTimeout(() => {
-            menu.classList.add("hidden");
-        }, 200); // Delay to prevent flicker
-    });
-}
-
-function setHeroHeight() {
-    const hero = document.getElementById('hero');
-    const width = window.innerWidth;
-    let vh;
-
-    if (width >= 768) {
-        // Desktop and up
-        vh = window.innerHeight * 0.97;
-    } else {
-        // Smaller screens
-        vh = window.innerHeight * 0.90;
-    }
-
-    hero.style.height = `${vh}px`;
-}
-
-window.addEventListener('load', setHeroHeight);
-window.addEventListener('resize', setHeroHeight);
 
 
-// Initialize dropdown on page load
-document.addEventListener("DOMContentLoaded", function () { setupDropdownHover("more-dropdown", "dropdown-menu"); });
+
+
+// function setHeroHeight() {
+//     const hero = document.getElementById('hero');
+//     const width = window.innerWidth;
+//     let vh;
+
+//     if (width >= 768) {
+//         // Desktop and up
+//         vh = window.innerHeight * 0.97;
+//     } else {
+//         // Smaller screens
+//         vh = window.innerHeight * 0.90;
+//     }
+
+//     hero.style.height = `${vh}px`;
+// }
+
+// window.addEventListener('load', setHeroHeight);
+// window.addEventListener('resize', setHeroHeight);
+
 
