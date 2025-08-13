@@ -188,13 +188,13 @@
 }
 
 /* ---------------- Card Animation (desktop only) ---------------- */
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .animate-on-scroll {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
-} 
+}  */
 
 .fade-in-up {
   opacity: 0;
