@@ -55,10 +55,17 @@ body {
     border-radius: 1rem;
     padding: 2.5rem;
     text-align: left;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
-        0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+@media (min-width: 640px) {
+    .service-card {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.04);
+    }
+}
+
 
 .service-card-container {
     scroll-snap-type: y mandatory;
