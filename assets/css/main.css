@@ -90,6 +90,18 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.service-card-container {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.service-card-container::-webkit-scrollbar {
+  display: none; 
+}
+
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -224,26 +236,26 @@ body {
 }
 
 .sign-in-btn {
-  background: linear-gradient(to right, #4f46e5 50%, #ffffff 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
+    background: linear-gradient(to right, #4f46e5 50%, #ffffff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .sign-in-btn:hover {
-  background-position: left bottom;
-  color: white;
+    background-position: left bottom;
+    color: white;
 }
 
 .join-btn {
-  background: linear-gradient(to right, #4f46e5 50%, #ffffff 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
+    background: linear-gradient(to right, #4f46e5 50%, #ffffff 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .join-btn:hover {
-  background-position: left bottom;
-  color: white;
-  text-decoration: none;
+    background-position: left bottom;
+    color: white;
+    text-decoration: none;
 }
