@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- SET HERO HEIGHT ---
-    // function setHeroHeight() {
-    //     $('.hero').css('height', $(window).height() + 'px');
-    // }
-    // setHeroHeight();
-    // $(window).on('resize', function () {
-    //     setHeroHeight();
-    // });
+    function setHeroHeight() {
+        $('.hero').css('height', $(window).height() + 'px');
+    }
+    setHeroHeight();
+    $(window).on('resize', function () {
+        setHeroHeight();
+    });
 });
 
 
