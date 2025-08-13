@@ -20,17 +20,20 @@ body {
 }
 
 @media (min-width: 1500px) {
-    .top-corner-video {
+    .desktop-window{
         width: 3.5%;
     }
 }
 
 @media (min-width: 1900px) {
-    .top-corner-video {
+    .desktop-window {
         width: 10%;
     }
 }
 
+.window-border{
+    outline: 0.7rem solid white;
+}
 
 .nav-link {
     position: relative;
