@@ -258,3 +258,12 @@
 .fade-in-bottom-right.is-visible {
   animation: fadeInBottomRight 0.8s ease-out forwards;
 }
+
+@media (max-width: 768px) {
+  svg defs filter#goo {
+    display: none;
+  }
+  .clipped-content {
+    filter: none !important;
+  }
+}
