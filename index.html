@@ -10,12 +10,17 @@
     <link rel="stylesheet" href="assets/css/animation.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+.hero {
+  height: calc(var(--vh, 1vh) * 100);
+}
+</style>
 </head>
 
 <body class="flex flex-col select-none">
 
     <!-- Hero Section -->
-    <header id="hero" class="relative p-2 sm:p-4 h-screen">
+    <header id="hero" class="hero relative p-2 sm:p-4 h-screen">
         <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
             version="1.1">
             <defs>
@@ -351,7 +356,7 @@
                         <div class="bg-white text-center rounded-2xl shadow-lg p-10 max-w-md mx-auto">
                             <img src="assets/images/founder-image.jpg" alt="Founder Image"
                                 class="w-48 h-48 founder-image object-cover object-[center_10%] rounded-full mx-auto shadow-lg" />
-                            <h3 class="font-signature text-nowrap text-3xl md:text-4xl text-gray-800 mt-4">
+                            <h3 class="font-signature text-nowrap text-2xl md:text-4xl text-gray-800 mt-4">
                                 Mohamed Thanseem
                             </h3>
                             <p class="font-semibold text-[#4F51D8] mt-1">Founder & CEO</p>
@@ -674,6 +679,19 @@
         </div>
     </footer>
 
+    <script>
+function setHeroHeight() {
+  // Get the visible height of the window
+  let vh = window.innerHeight * 0.01;
+  // Set a CSS variable for it
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Run on load
+setHeroHeight();
+// Run on resize/orientation change
+window.addEventListener('resize', setHeroHeight);
+</script>
     <script src="assets/js/script.js"></script>
 </body>
 
