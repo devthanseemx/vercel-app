@@ -15,7 +15,7 @@ body {
 }
 
 
-/* #hero {
+#hero {
     filter: url('#goo');
 }
 
@@ -45,54 +45,6 @@ body {
     bottom: 0;
     right: 0;
     overflow: hidden;
-} */
-
-#hero {
-  filter: url('#goo');
-  height: 100vh;
-  position: relative;
-}
-
-/* Disable filter on mobile for better compatibility */
-@media (max-width: 768px) {
-  #hero {
-    filter: none !important;
-  }
-}
-
-.clipped-content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 70% 70%, 70% 100%, 0% 100%);
-  background-color: white;
-}
-
-/* Disable clip-path on mobile */
-@media (max-width: 768px) {
-  .clipped-content {
-    clip-path: none !important;
-  }
-}
-
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0; /* Avoid negative z-index */
-}
-
-.corner {
-  width: 28%;
-  height: 26%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  overflow: hidden;
 }
 
 
