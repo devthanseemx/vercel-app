@@ -1,10 +1,10 @@
-/* Override for mobile screens */
-@media (max-width: 1023px) {
+
+ @media (max-width: 1023px) {
   .animate-scroll {
     animation-name: scrollMobile;
     animation-duration: 15s;
   }
-}
+} 
 
 .gallery-image-set img {
   height: 14rem;
@@ -28,12 +28,13 @@
   }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
   .gallery-image-set img {
     width: 12rem;
     height: 14rem;
   }
 }
+
 
 /* Keyframes */
 
@@ -187,13 +188,13 @@
 }
 
 /* ---------------- Card Animation (desktop only) ---------------- */
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .animate-on-scroll {
-    animation: none !important; /* Disable animation on mobile */
-    opacity: 1 !important; /* Make sure they are visible */
+    animation: none !important;
+    opacity: 1 !important;
     transform: none !important;
   }
-}
+} */
 
 .fade-in-up {
   opacity: 0;
@@ -257,13 +258,4 @@
 
 .fade-in-bottom-right.is-visible {
   animation: fadeInBottomRight 0.8s ease-out forwards;
-}
-
-@media (max-width: 768px) {
-  svg defs filter#goo {
-    display: none;
-  }
-  .clipped-content {
-    filter: none !important;
-  }
 }

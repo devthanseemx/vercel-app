@@ -16,33 +16,28 @@
 
     <!-- Hero Section -->
     <header id="hero" class="hero relative p-2 sm:p-4 h-screen">
-        <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
-            version="1.1">
-            <defs>
-                <filter id="goo">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                        result="goo" />
-                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-                </filter>
-            </defs>
-        </svg>
-        <!-- Background video content -->
-        <div class="absolute inset-0 z-0 p-2 sm:p-4">
-            <div class="clipped-content flex flex-col h-full">
-                <video autoplay muted loop playsinline class="hero-video">
-                    <source src="assets/videos/Hero-Section-Bg.mp4" type="video/mp4">
+
+        <!-- Videos container (lower z-index) -->
+        <div class="videos-container absolute inset-0 z-0 p-2">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-xl">
+                <source src="assets/videos/Hero-Section-Bg.mp4" type="video/mp4" />
+            </video>
+
+            <div
+                class="hidden top-corner-video md:block absolute top-0 left-0 bg-white p-2 h-[60%] overflow-hidden rounded-tl-lg rounded-br-xl">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-tl-lg rounded-br-xl">
+                    <source src="assets/videos/Hero-Section-Bg.mp4" type="video/mp4" />
                 </video>
-                <!-- <img src="assets/images/about-founder-bg.jpg" alt="" class="hero-video"> -->
             </div>
 
-            <div class="corner absolute bottom-0 right-0 m-2 lg:m-4 overflow-hidden rounded-lg">
-                <video autoplay muted loop playsinline class="corner-video w-full h-full object-cover">
-                    <source src="assets/videos/hero-section-bg.mp4" type="video/mp4" />
+            <div
+                class="absolute bottom-0 right-0 bg-white rounded-tl-xl rounded-br-xl p-2 h-[30%] w-[30%] overflow-hidden">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover rounded-tl-xl rounded-br-xl">
+                    <source src="assets/videos/Hero-Section-Bg.mp4" type="video/mp4" />
                 </video>
-                <!-- <img src="assets/images/about-founder-bg.jpg" alt="" class="corner-video w-full h-full object-cover"> -->
             </div>
         </div>
+
 
         <!-- Navigation Bar -->
         <div class="relative z-10 h-full flex flex-col">
@@ -104,7 +99,7 @@
 
             <!-- Mobile Menu Panel -->
             <div id="mobile-menu"
-                class="fixed inset-0 z-30 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out lg:hidden opacity-0 invisible">
+                class="fixed inset-0 z-30 bg-black bg-opacity-30 transition-opacity duration-300 ease-in-out lg:hidden opacity-0 invisible">
 
                 <div id="mobile-menu-panel"
                     class="bg-white w-3/4 max-w-sm h-full p-4 transition-transform duration-300 ease-in-out transform -translate-x-full">
@@ -188,7 +183,8 @@
                 </p>
             </div>
 
-            <div class="service-card-container mt-16 md:mt-20 overflow-y-auto h-64 md:h-auto md:pb-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 scroll-smooth">
+            <div
+                class="service-card-container mt-16 md:mt-20 overflow-y-auto h-64 md:h-auto md:pb-5 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 scroll-smooth">
                 <!-- Card 1 -->
                 <div class="service-card animate-on-scroll fade-in-up h-fit flex flex-col justify-center items-center px-6 py-10 md:items-start md:text-left md:px-8 text-center"
                     style="scroll-snap-align: start; animation-delay: 200ms;">
@@ -489,10 +485,10 @@
 
             <div class="flex justify-between gap-2 md:gap-4 mt-16 flex-wrap md:flex-nowrap">
                 <!-- Card 1 -->
-                <div class="w-40 sm:w-48 rounded-2xl shadow-lg bg-[#1a3a1a] p-2 flex flex-col h-60 md:h-72 
+                <div class="w-40 sm:w-48 rounded-2xl shadow-lg bg-[#9c704c] p-2 flex flex-col h-60 md:h-72 
                 transition-transform duration-500 hover:rotate-1 hover:-translate-y-1 hover:shadow-xl 
                 animate-on-scroll fade-in-left animation-delay-200">
-                    <div class="p-3">
+                    <div class="p-1">
                         <h2 class="text-white text-xl font-bold">Designers</h2>
                     </div>
                     <div class="flex-1 rounded-2xl overflow-hidden">
@@ -502,10 +498,10 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="w-48 sm:w-80 rounded-2xl shadow-lg bg-[#1a3a1a] p-2 flex flex-col h-60 md:h-72 
+                <div class="w-48 sm:w-80 rounded-2xl shadow-lg bg-[#0d5878] p-2 flex flex-col h-60 md:h-72 
                 transition-transform duration-500 hover:-rotate-1 hover:shadow-lg 
                 animate-on-scroll fade-in-left animation-delay-300">
-                    <div class="p-3">
+                    <div class="p-1">
                         <h2 class="text-white text-xl font-bold">Programming</h2>
                     </div>
                     <div class="flex-1 rounded-2xl overflow-hidden">
@@ -515,10 +511,10 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="w-52 sm:w-72 rounded-2xl shadow-lg bg-[#1a3a1a] p-2 flex flex-col h-60 md:h-72 
+                <div class="w-52 sm:w-72 rounded-2xl shadow-lg bg-[#ed8c42] p-2 flex flex-col h-60 md:h-72 
                 transition-transform duration-500 hover:rotate-1 hover:-translate-y-1 hover:shadow-xl 
                 animate-on-scroll fade-in-up animation-delay-400">
-                    <div class="p-3">
+                    <div class="p-1">
                         <h2 class="text-white text-xl font-bold">Construction</h2>
                     </div>
                     <div class="flex-1 rounded-2xl overflow-hidden">
@@ -528,10 +524,10 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="w-36 sm:w-80 rounded-2xl shadow-lg bg-[#1a3a1a] p-2 flex flex-col h-60 md:h-72 
+                <div class="w-36 sm:w-80 rounded-2xl shadow-lg bg-[#949487] p-2 flex flex-col h-60 md:h-72 
                 transition-transform duration-500 hover:rotate-1 hover:-translate-y-1 hover:shadow-xl 
                 animate-on-scroll fade-in-right animation-delay-500">
-                    <div class="p-3">
+                    <div class="p-1">
                         <h2 class="text-white text-xl font-bold">Writing</h2>
                     </div>
                     <div class="flex-1 rounded-2xl overflow-hidden">
@@ -541,11 +537,11 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="w-full sm:w-60 rounded-2xl shadow-lg bg-[#1a3a1a] p-2 flex flex-col h-60 md:h-72 
+                <div class="w-full sm:w-60 rounded-2xl shadow-lg bg-[#bac3d4] p-2 flex flex-col h-60 md:h-72 
                 transition-transform duration-500 hover:-rotate-1 hover:shadow-lg 
                 animate-on-scroll fade-in-right animation-delay-600">
-                    <div class="p-3">
-                        <h2 class="text-white text-xl font-bold">Marketing</h2>
+                    <div class="p-1">
+                        <h2 class="text-white text-xl font-medium">Marketing</h2>
                     </div>
                     <div class="flex-1 rounded-2xl overflow-hidden">
                         <img src="assets/images/image12.jpg" alt="Marketing"
@@ -674,7 +670,7 @@
     </footer>
 
     <script>
-        
+
     </script>
     <script src="assets/js/script.js"></script>
 </body>

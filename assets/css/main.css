@@ -14,49 +14,18 @@ body {
     max-width: 90rem;
 }
 
-
-#hero {
-    filter: url('#goo');
+@media (min-width: 1500px) {
+  .top-corner-video {
+    width: 3.5%;
+  }
 }
 
-.clipped-content {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 70% 70%, 70% 100%, 0% 100%);
-    background-color: white;
+@media (min-width: 1900px) {
+  .top-corner-video {
+    width: 10%;
+  }
 }
 
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.corner {
-    width: 28%;
-    height: 26%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-}
-
-
-@media (max-width: 767px) {
-    .corner {
-        width: 25%;
-        height: 28%;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
-}
 
 .nav-link {
     position: relative;
@@ -177,7 +146,6 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/* Mobile adjustments */
 @media (max-width: 640px) {
     .step-number-circle {
         width: 50px;
