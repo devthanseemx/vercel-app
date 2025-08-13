@@ -5,6 +5,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+    overflow-y: scroll;
+}
+
 .scroll-hidden::-webkit-scrollbar {
     display: none;
     overflow-y: scroll;
