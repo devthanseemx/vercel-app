@@ -59,6 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#scrolling-gallery').append($clone);
     }
 
+    // --- SET HERO HEIGHT ---
+    function setHeroHeight() {
+        $('.hero').css('height', $(window).height() + 'px');
+    }
+    setHeroHeight();
+    $(window).on('resize', function () {
+        setHeroHeight();
+    });
 });
 
 

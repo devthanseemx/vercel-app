@@ -1,40 +1,13 @@
-/* Scroll animation for desktop */
-  @keyframes scrollDesktop {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  /* Scroll animation for mobile (faster) */
-  @keyframes scrollMobile {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
+/* Override for mobile screens */
+@media (max-width: 1023px) {
   .animate-scroll {
-    animation-name: scrollDesktop;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 40s; 
+    animation-name: scrollMobile;
+    animation-duration: 15s;
   }
-
-  /* Override for mobile screens */
-  @media (max-width: 1023px) {
-    .animate-scroll {
-      animation-name: scrollMobile;
-      animation-duration:15s; 
-    }
-  }
+}
 
 .gallery-image-set img {
-  height: 14rem;  
+  height: 14rem;
   width: 8rem;
   margin-right: 1rem;
   border-radius: 0.375rem;
@@ -62,9 +35,6 @@
   }
 }
 
-
-
-
 /* Keyframes */
 
 @keyframes fadeInUp {
@@ -72,6 +42,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -83,6 +54,7 @@
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -94,6 +66,7 @@
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -105,14 +78,12 @@
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
-
-
 
 /* Diagonal fade ins */
 
@@ -121,6 +92,7 @@
     opacity: 0;
     transform: translate(-20px, -20px);
   }
+
   to {
     opacity: 1;
     transform: translate(0, 0);
@@ -132,6 +104,7 @@
     opacity: 0;
     transform: translate(20px, -20px);
   }
+
   to {
     opacity: 1;
     transform: translate(0, 0);
@@ -143,6 +116,7 @@
     opacity: 0;
     transform: translate(-20px, 20px);
   }
+
   to {
     opacity: 1;
     transform: translate(0, 0);
@@ -154,18 +128,77 @@
     opacity: 0;
     transform: translate(20px, 20px);
   }
+
   to {
     opacity: 1;
     transform: translate(0, 0);
   }
 }
 
+/* Scroll animation for desktop */
+@keyframes scrollDesktop {
+  0% {
+    transform: translateX(0);
+  }
 
-/* Animation classes */
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------------- Scroll Animation (works everywhere) ---------------- */
+@keyframes scrollDesktop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Mobile speed (<= 1023px) */
+@media (max-width: 1023px) {
+  .animate-scroll {
+    animation-name: scrollMobile;
+    animation-duration: 15s;
+  }
+}
+
+/* Desktop speed (>= 1024px) */
+@media (min-width: 1024px) {
+  .animate-scroll {
+    animation-name: scrollDesktop;
+    animation-duration: 40s;
+  }
+}
+
+/* ---------------- Card Animation (desktop only) ---------------- */
+@media (max-width: 1023px) {
+  .animate-on-scroll {
+    animation: none !important; /* Disable animation on mobile */
+    opacity: 1 !important; /* Make sure they are visible */
+    transform: none !important;
+  }
+}
 
 .fade-in-up {
   opacity: 0;
 }
+
 .fade-in-up.is-visible {
   animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -173,6 +206,7 @@
 .fade-in-down {
   opacity: 0;
 }
+
 .fade-in-down.is-visible {
   animation: fadeInDown 0.8s ease-out forwards;
 }
@@ -180,6 +214,7 @@
 .fade-in-right {
   opacity: 0;
 }
+
 .fade-in-right.is-visible {
   animation: fadeInRight 0.8s ease-out forwards;
 }
@@ -187,6 +222,7 @@
 .fade-in-left {
   opacity: 0;
 }
+
 .fade-in-left.is-visible {
   animation: fadeInLeft 0.8s ease-out forwards;
 }
@@ -194,6 +230,7 @@
 .fade-in-top-left {
   opacity: 0;
 }
+
 .fade-in-top-left.is-visible {
   animation: fadeInTopLeft 0.8s ease-out forwards;
 }
@@ -201,6 +238,7 @@
 .fade-in-top-right {
   opacity: 0;
 }
+
 .fade-in-top-right.is-visible {
   animation: fadeInTopRight 0.8s ease-out forwards;
 }
@@ -208,6 +246,7 @@
 .fade-in-bottom-left {
   opacity: 0;
 }
+
 .fade-in-bottom-left.is-visible {
   animation: fadeInBottomLeft 0.8s ease-out forwards;
 }
@@ -215,6 +254,7 @@
 .fade-in-bottom-right {
   opacity: 0;
 }
+
 .fade-in-bottom-right.is-visible {
   animation: fadeInBottomRight 0.8s ease-out forwards;
 }
