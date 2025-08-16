@@ -26,18 +26,18 @@ body::-webkit-scrollbar{
 
 @media (min-width: 1500px) {
     .desktop-window{
-        width: 3.5%;
+        width: 2%;
     }
 }
 
 @media (min-width: 1900px) {
     .desktop-window {
-        width: 10%;
+        width: 9%;
     }
 }
 
 .window-border{
-    outline: 0.7rem solid white;
+    outline: 0.5rem solid white;
 }
 
 .nav-link {

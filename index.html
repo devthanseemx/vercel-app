@@ -21,21 +21,43 @@
         <div class="videos-container absolute inset-0 z-0 p-2 m-2">
 
             <!-- Continuous background image (only once) -->
-            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover rounded-xl z-0 pointer-events-none select-none"><source src="/videos/Hero-Section-Bg.mp4" type="video/mp4"></video>
+            <video autoplay muted loop playsinline
+                class="absolute inset-0 w-full h-full object-cover rounded-xl z-0 pointer-events-none select-none">
+                <source src="/videos/Hero-Section-Bg.mp4" type="video/mp4">
+            </video>
+
 
             <!-- Mobile top-left window -->
-            <div class="window md:hidden absolute top-32 left-0 h-20 w-[15%] rounded-tr-md rounded-br-md overflow-hidden bg-transparent window-border z-10"></div>
+            <div
+                class="window md:hidden absolute top-0 right-0 h-16 w-[15%] rounded-tr-md rounded-bl-md overflow-hidden bg-transparent window-border z-10 flex justify-center items-center mb-5">
+                <button id="menu-btn" class="lg:hidden relative z-40">
+                    <i class="bi bi-list text-4xl text-white font-extrabold"></i>
+                </button>
+            </div>
 
             <!-- Desktop top-left window -->
-            <div class="window desktop-window hidden md:block absolute top-0 left-1 h-[60%] rounded-tl-lg rounded-br-xl overflow-hidden bg-transparent window-border z-10"></div>
+            <div
+                class="window desktop-window hidden lg:block absolute top-0 left-1 h-[60%] rounded-tl-lg rounded-br-xl overflow-hidden bg-transparent window-border z-10bg-white">
+            </div>
 
             <!-- Bottom-right window -->
-            <div class="window absolute bottom-0 right-0 h-[30%] w-[24%] md:w-[30%] rounded-tl-xl overflow-hidden bg-transparent window-border z-10"></div>
+            <div
+                class="window hidden md:block absolute bottom-0 right-0 h-[30%] w-[24%] md:w-[30%] md:rounded-tl-xl overflow-hidden bg-transparent window-border z-10">
+            </div>
+
+            <!-- Bottom-left window for mobile -->
+            <div
+                class="window absolute bottom-0 left-0 right-0 h-[30%] w-[24%]  rounded-tr-xl overflow-hidden bg-transparent window-border z-10 sm:hidden">
+            </div>
 
         </div>
 
+        <!-- Logo for mobile -->
+        <h3 class=" md:hidden text-white w-fit uppercase text-xl font-bold relative z-30 top-6 left-5">QuickHire LK</h3>
+
         <!-- Navigation Bar -->
-        <div class="relative z-10 h-full flex flex-col">
+        <div class="relative z-10 h-full flex flex-col mt-5">
+
             <nav
                 class="hidden lg:flex w-full custom-width mx-auto mt-8 px-6 py-5 justify-between items-center z-30 text-white">
 
@@ -80,18 +102,6 @@
                 </div>
             </nav>
 
-
-            <!-- MOBILE Navigation Bar-->
-            <nav
-                class="*top-0 left-0 right-0 z-20 my-5 mx-5 sm:my-10 sm:mx-10 bg-white rounded-lg p-4 flex items-center justify-between lg:hidden">
-                <button id="menu-btn" class="lg:hidden">
-                    <i class="bi bi-list text-2xl"></i>
-                </button>
-                <h3 class="uppercase text-xl font-bold">QuicHire LK</h3>
-                <button class="bg-indigo-700 py-2 px-4 rounded-xl text-white font-medium"> <a
-                        href="pages/coming-soon.html">Sign in</a></button>
-            </nav>
-
             <!-- Mobile Menu Panel -->
             <div id="mobile-menu"
                 class="fixed inset-0 z-30 bg-black bg-opacity-30 transition-opacity duration-300 ease-in-out lg:hidden opacity-0 invisible">
@@ -99,23 +109,24 @@
                 <div id="mobile-menu-panel"
                     class="bg-white w-3/4 max-w-sm h-full p-4 transition-transform duration-300 ease-in-out transform -translate-x-full">
 
-                    <div class="flex flex-col space-y-2 mt-10">
+                    <div class="flex flex-col space-y-3 mt-10">
                         <a href="#hero" class="nav-link block px-3 py-2 rounded-md text-gray-700">Home</a>
                         <a href="#services" class="nav-link block px-3 py-2 rounded-md text-gray-700">Services</a>
                         <a href="#how-it-works" class="nav-link block px-3 py-2 rounded-md text-gray-700">How It
                             Works</a>
                         <a href="#about" class="nav-link block px-3 py-2 rounded-md text-gray-700">About</a>
-                        <a href="#footer" class="nav-link block px-3 py-2 rounded-md text-gray-700">Contact Us</a>`
+                        <a href="#footer" class="nav-link block px-3 py-2 rounded-md text-gray-700">Contact Us</a>
+                        <div class="w-full p-2">
+                            <button class="bg-indigo-700 py-2 px-4 rounded-xl text-white font-medium mt-3 w-full"> <a href="pages/coming-soon.html">Sign in</a> </button>
+                        </div>
                     </div>
 
                 </div>
             </div>
 
             <div
-                class="flex-grow flex flex-col mt-20 px-6 justify-around w-full custom-width lg:custom-width lg:mt-1 mx-auto">
-
-
-                <div class="max-w-4xl text-left text-white flex flex-col items-start">
+                class="flex-grow flex flex-col mt-15 px-6 justify-around w-full custom-width lg:custom-width lg:mt-1 mx-auto">
+                <div class="max-w-4xl text-center md:text-left text-white flex flex-col items-center md:items-start">
                     <span
                         class="bg-white text-gray-800 text-xs font-semibold px-4 py-1 rounded-full text-nowrap mt-10 mb-5 lg:mt-8 xl:mt-10 animate-on-scroll fade-in-up">
                         The #1 Job Platform in Sri Lanka
@@ -137,8 +148,8 @@
                     </p>
                 </div>
 
-                <!-- The container for the scrolling gallery -->
-                <div class="h-48 w-2/3 mt-8 overflow-hidden relative lg:-mt-2 rounded-lg">
+                <!-- The container for the scrolling gallery (Desktop) -->
+                <div class="hidden md:block h-48 w-2/3 mt-8 overflow-hidden relative lg:-mt-2 rounded-lg">
                     <div id="scrolling-gallery" class="flex whitespace-nowrap animate-scroll">
 
                         <div class="gallery-image-set flex-shrink-0 flex">
@@ -152,10 +163,28 @@
                             <img src="/assets/images/image8.jpg" alt="img8" class="gallery-image" />
                             <img src="/assets/images/image9.jpg" alt="img9" class="gallery-image" />
                         </div>
-
                     </div>
                 </div>
 
+                <!-- The container for the scrolling gallery (Mobile) -->
+                <div class="w-full flex flex-row">
+                    <div class="w-[35%]"></div>
+                    <div class="md:hidden h-48 w-[65%] mt-8 overflow-hidden relative lg:-mt-2 rounded-lg">
+                        <div id="scrolling-gallery" class="flex whitespace-nowrap animate-scroll">
+                            <div class="gallery-image-set flex-shrink-0 flex">
+                                <img src="assets/images/image1.jpg" alt="img1" class="gallery-image" />
+                                <img src="/assets/images/image2.jpg" alt="img2" class="gallery-image" />
+                                <img src="/assets/images/image3.jpg" alt="img3" class="gallery-image" />
+                                <img src="/assets/images/image4.jpg" alt="img4" class="gallery-image" />
+                                <img src="/assets/images/image5.jpg" alt="img5" class="gallery-image" />
+                                <img src="/assets/images/image6.jpg" alt="img6" class="gallery-image" />
+                                <img src="/assets/images/image7.jpg" alt="img7" class="gallery-image" />
+                                <img src="/assets/images/image8.jpg" alt="img8" class="gallery-image" />
+                                <img src="/assets/images/image9.jpg" alt="img9" class="gallery-image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </header>
 
