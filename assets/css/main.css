@@ -34,6 +34,9 @@ body::-webkit-scrollbar{
     .desktop-window {
         width: 9%;
     }
+    .spec{
+        margin-top: 7rem;
+    }
 }
 
 .window-border{

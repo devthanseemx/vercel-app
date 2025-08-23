@@ -19,6 +19,17 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        screens: {
+          '3xl': '1900px', // Custom 3XL breakpoint
+        },
+      },
+    },
+  }
+</script>
     <style>
         .signature {
             font-family: 'brownless', sans-serif;
@@ -69,7 +80,7 @@
 
             <!-- Desktop top-left window -->
             <div
-                class="window desktop-window hidden lg:block absolute top-0 left-1 h-[60%] rounded-tl-lg rounded-br-xl overflow-hidden bg-transparent window-border z-10bg-white">
+                class="window desktop-window hidden 3xl:block absolute top-0 left-0 h-[60%] rounded-tl-lg rounded-br-xl overflow-hidden bg-transparent window-border z-10bg-white">
             </div>
 
             <!-- Bottom-right window -->
@@ -79,7 +90,7 @@
 
             <!-- Bottom-left window for mobile -->
             <div
-                class="window absolute bottom-0 left-0 right-0 h-[30%] w-[24%]  rounded-tr-xl overflow-hidden bg-transparent window-border z-10 sm:hidden">
+                class="window absolute bottom-0 left-0 right-0 h-[25%] w-[70%]  rounded-tr-xl overflow-hidden bg-transparent window-border z-10 sm:hidden">
             </div>
 
         </div>
@@ -157,11 +168,10 @@
                 </div>
             </div>
 
-            <div
-                class="flex-grow flex flex-col mt-15 px-6 justify-around w-full custom-width lg:custom-width lg:mt-1 mx-auto">
-                <div class="max-w-4xl text-center md:text-left text-white flex flex-col items-center md:items-start">
+            <div class="flex flex-col px-6 justify-around w-full custom-width lg:custom-width lg:mt-1 mx-auto h-auto">
+                <div class="max-w-4xl text-center md:text-left text-white flex flex-col items-center md:items-start mt-28 2xl:mt-0 image-container-desktop">
                     <span
-                        class="bg-white text-gray-800 text-xs font-semibold px-4 py-1 rounded-full text-nowrap mt-10 mb-5 lg:mt-8 xl:mt-10 animate-on-scroll fade-in-up">
+                        class="bg-white text-gray-800 text-xs font-semibold px-4 py-1 rounded-full text-nowrap mt-10 mb-5 lg:mt-8 3xl:mt-28 animate-on-scroll fade-in-up">
                         The #1 Job Platform in Sri Lanka
                     </span>
 
@@ -173,52 +183,34 @@
                     <hr class="mt-10 mb-5 border-gray-100 w-80 lg:w-full lg:mt-10 animate-on-scroll fade-in-up"
                         style="animation-delay: 400ms;">
 
-                    <p class="text-sm mt-1 mb-10 lg:text-lg animate-on-scroll fade-in-up"
+                    <p class="text-sm mt-1 mb-10 lg:text-lg animate-on-scroll fade-in-up 3xl:mb-20"
                         style="animation-delay: 500ms;">
                         Connect with the best professionals or find your dream job. QuickHire LK brings together top
                         talent
                         and exciting opportunities in one platform.
                     </p>
                 </div>
+            </div>
 
-                <!-- The container for the scrolling gallery (Desktop) -->
-                <div class="hidden md:block h-48 w-2/3 mt-8 overflow-hidden relative lg:-mt-2 rounded-lg">
-                    <div id="scrolling-gallery" class="flex whitespace-nowrap animate-scroll">
 
-                        <div class="gallery-image-set flex-shrink-0 flex">
-                            <img src="assets/images/image1.jpg" alt="img1" class="gallery-image" />
-                            <img src="/assets/images/image2.jpg" alt="img2" class="gallery-image" />
-                            <img src="/assets/images/image3.jpg" alt="img3" class="gallery-image" />
-                            <img src="/assets/images/image4.jpg" alt="img4" class="gallery-image" />
-                            <img src="/assets/images/image5.jpg" alt="img5" class="gallery-image" />
-                            <img src="/assets/images/image6.jpg" alt="img6" class="gallery-image" />
-                            <img src="/assets/images/image7.jpg" alt="img7" class="gallery-image" />
-                            <img src="/assets/images/image8.jpg" alt="img8" class="gallery-image" />
-                            <img src="/assets/images/image9.jpg" alt="img9" class="gallery-image" />
-                        </div>
-                    </div>
-                </div>
+            <!-- The container for the scrolling gallery (Desktop) -->
+            <div class="hidden md:block h-48 w-2/3 mt-8 overflow-hidden relative lg:-mt-2 rounded-lg">
+                <div id="scrolling-gallery" class="flex whitespace-nowrap animate-scroll">
 
-                <!-- The container for the scrolling gallery (Mobile) -->
-                <div class="w-full flex flex-row">
-                    <div class="w-[35%]"></div>
-                    <div class="md:hidden h-52 w-[66%] mt-8 overflow-hidden relative lg:-mt-2 rounded-lg">
-                        <div id="scrolling-gallery" class="flex whitespace-nowrap animate-scroll">
-                            <div class="gallery-image-set flex-shrink-0 flex">
-                                <img src="assets/images/image1.jpg" alt="img1" class="gallery-image" />
-                                <img src="/assets/images/image2.jpg" alt="img2" class="gallery-image" />
-                                <img src="/assets/images/image3.jpg" alt="img3" class="gallery-image" />
-                                <img src="/assets/images/image4.jpg" alt="img4" class="gallery-image" />
-                                <img src="/assets/images/image5.jpg" alt="img5" class="gallery-image" />
-                                <img src="/assets/images/image6.jpg" alt="img6" class="gallery-image" />
-                                <img src="/assets/images/image7.jpg" alt="img7" class="gallery-image" />
-                                <img src="/assets/images/image8.jpg" alt="img8" class="gallery-image" />
-                                <img src="/assets/images/image9.jpg" alt="img9" class="gallery-image" />
-                            </div>
-                        </div>
+                    <div class="gallery-image-set flex-shrink-0 flex">
+                        <img src="assets/images/image1.jpg" alt="img1" class="gallery-image" />
+                        <img src="/assets/images/image2.jpg" alt="img2" class="gallery-image" />
+                        <img src="/assets/images/image3.jpg" alt="img3" class="gallery-image" />
+                        <img src="/assets/images/image4.jpg" alt="img4" class="gallery-image" />
+                        <img src="/assets/images/image5.jpg" alt="img5" class="gallery-image" />
+                        <img src="/assets/images/image6.jpg" alt="img6" class="gallery-image" />
+                        <img src="/assets/images/image7.jpg" alt="img7" class="gallery-image" />
+                        <img src="/assets/images/image8.jpg" alt="img8" class="gallery-image" />
+                        <img src="/assets/images/image9.jpg" alt="img9" class="gallery-image" />
                     </div>
                 </div>
             </div>
+        </div>
     </header>
 
     <!-- Main Section -->
