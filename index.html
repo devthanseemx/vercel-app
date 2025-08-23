@@ -8,19 +8,36 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/animation.css">
-    <link href="https://fonts.cdnfonts.com/css/rustic-roadway-personal-use" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/wasted-vindey" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/the-munday-free-version" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/perfecto-calligraphy-personal-use" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/priestacy" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+
+
+
 
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
         .signature {
-            font-family: 'Perfecto Calligraphy - Personal use', sans-serif;
-            font-weight: 900;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.2);
+            /* semi-transparent background */
+            backdrop-filter: blur(10px);
+            /* frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
+            /* Safari support */
+            border-radius: 1rem;
+            /* match rounded-2xl */
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            /* soft shadow */
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            /* optional glass border */
+            color: #fff;
+            /* text color (optional, adjust as needed) */
         }
     </style>
 </head>
@@ -329,10 +346,9 @@
                             <span class="text-[#199ddf]">QuickHire LK</span>
                         </h2>
                         <p class="mt-3 text-sm md:mt-5 text-white md:text-base">
-                            Founded by Thanseem, a passionate technologist and entrepreneur with
-                            over 2 years of experience in the Sri Lankan tech industry. His vision
-                            was simple: create a platform that truly serves both job seekers and
-                            employers in Sri Lanka.
+                            Founded by Thanseem, a passionate technologist and entrepreneur dedicated to improving the
+                            job market in Sri Lanka. His vision was simple: create a platform that truly serves both job
+                            seekers and employers.
                         </p>
 
                         <!-- Mission, Values, Commitment -->
@@ -387,14 +403,15 @@
 
                     <!-- Right content (Founder Card) -->
                     <div class="animate-on-scroll fade-in-left">
-                        <div class="bg-white text-center rounded-2xl shadow-lg p-10 max-w-md mx-auto">
+                        <div
+                            class="bg-white/10 backdrop-blur-lg rounded-2xl shadow-lg border border-white/20 text-center p-10 max-w-md mx-auto flex flex-col items-center">
                             <img src="assets/images/original.jpg" alt="Founder Image"
                                 class="w-48 h-48 founder-image object-cover object-[center_10%] rounded-full mx-auto shadow-lg" />
-                            <h3 class="signature text-nowrap text-2xl md:text-4xl text-gray-800 mt-4">
+                            <h3 class="signature text-nowrap text-md md:text-2xl text-white mt-4">
                                 Mohamed Thanseem
                             </h3>
-                            <p class="font-semibold text-[#4F51D8] mt-1">Founder & CEO</p>
-                            <p class="text-gray-500 text-xs md:text-sm mt-4">
+                            <p class="font-semibold text-black mt-1 text-xs uppercase bg-white rounded-full px-3 py-1 w-fit text-center">Founder & CEO</p>
+                            <p class="text-white text-xs md:text-sm mt-4">
                                 "Every great career starts with the right opportunity. My goal is to
                                 ensure that no talented individual in Sri Lanka misses out on their
                                 perfect job match."
