@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mask Video Example</title>
+  <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/tt-wellingtons-trl" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/lexend" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .inter {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .brand-font {
+      font-family: 'TT Wellingtons Trl', sans-serif;
+    }
+
+    .font-lexend {
+      font-family: 'Lexend', sans-serif;
+    }
+
+    .hero {
+      background-image: url('/assets/images/about-founder-bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body class="inter h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-xl flex justify-between items-center w-full px-6 py-4">
+    <h2 class="brand-font text-xl uppercase font-semibold">QuickHire LK</h2>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="#" class="text-gray-700 hover:text-indigo-500">About</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-indigo-500">Services</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-indigo-500">Contact</a></li>
+        <li><a href="#" class="text-gray-700 hover:text-indigo-500">Home</a></li>
+      </ul>
+    </nav>
+    <button class="bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-600 transition">
+      Get Started
+    </button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero flex-1 flex flex-col justify-center items-start text-white px-10 py-16">
+    <div class="space-y-6 font-lexend">
+      <h1 class="text-8xl leading-tight">Find Work. Hire Talent.</h1>
+      <h1 class="text-8xl leading-tight">Grow Your Business.</h1>
+      <p class="inter max-w-3xl text-lg sm:text-xl mt-4">
+        Connect with the best professionals or find your dream job. QuickHire LK brings together
+        top talent and exciting opportunities in one platform.
+      </p>
+    </div>
+
+    <div class="mt-12 flex items-center gap-4">
+      <div class="w-28 h-28 rounded-full outline outline-4 outline-white"></div>
+    </div>
+  </section>
+
+</body>
+
+</html>
